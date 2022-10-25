@@ -1,7 +1,10 @@
 import React from "react";
 import classes from "./StartingPage.module.css";
 
+
+
 const StartingPage = (props) => {
+   
     const btnHandler=()=>{
         props.onDisplayQuestion();
     }
