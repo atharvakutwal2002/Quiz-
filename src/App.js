@@ -1,23 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import "./App.css";
+import QuestionPage from "./components/QuestionPage/QuestionPage";
+import ScorePage from "./components/Score/ScorePage";
+import StartingPage from "./components/StartingPage/StartingPage";
 
 function App() {
+  const [displayQuestionPage, setDisplayQuestionPage] = useState(false);
+  const [displayResult , setDisplayResult]=useState(false);
+  const [finalScore, setFinalScore]= useState(0);
+  const QuestionDisplayHandler = () => {
+    setDisplayQuestionPage(true);
+  };
+  const resultDisplayHandler=(score)=>{
+    setFinalScore(score);
+    setDisplayResult(true);
+    localStorage.clear();
+  }
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {(displayQuestionPage && !displayResult) && <QuestionPage  onDisplayResult={resultDisplayHandler}/>}
+      {!displayQuestionPage && (
+        <StartingPage onDisplayQuestion={QuestionDisplayHandler} />
+      )}
+      {displayResult && <ScorePage result={finalScore}/>}
     </div>
   );
 }

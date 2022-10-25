@@ -1,0 +1,89 @@
+.mainDiv {
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 10%;
+    background-color: rgb(213, 246, 246);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding-bottom: 4rem;
+  border-radius: 1.4rem;
+  box-shadow: 0 1rem 2rem #130909;
+}
+
+.question {
+  margin: 3rem;
+  font-size: 2rem;
+}
+
+.optButton {
+  cursor: pointer;
+  margin: 0.5rem;
+  font-size: 1.5rem;
+  padding: 0.4rem;
+  border-radius: 0.5rem;
+}
+
+.toggleQueBtn {
+    background-color:  rgb(24, 103, 103);
+  cursor: pointer;
+  color: aliceblue;
+
+  margin: 0.5rem 1rem;
+  font-size: 1.5rem;
+  padding: 0.6rem 1.5rem;
+  border-radius: 0.3rem;
+  border: none;
+}
+
+.togglingQueBtnDiv {
+  margin-top: 2rem;
+}
+.finishButton {
+  margin: 2rem;
+  font-size: 1.5rem;
+  padding: 0.4rem 1rem;
+  border-radius: 0.1rem;
+  color: aliceblue;
+  background-color: rgb(238, 59, 59);
+  cursor: pointer;
+}
+
+.title{
+    color: rgb(37, 70, 99);
+    font-size: 2rem;
+    margin: 2rem;
+
+}
+
+.options{
+    align-items: center;
+    display: flex;
+}
+
+.firstQueClass,.lastQueClass{
+
+  display: none;
+}
+
+.chosenOpt{
+  background-color: red;
+  cursor: pointer;
+  margin: 0.5rem;
+  font-size: 1.5rem;
+  padding: 0.4rem;
+  border-radius: 0.5rem;
+  color: aliceblue;
+}
+
+@media only screen and (max-width: 700px) {
+  .mainDiv{
+    margin: 2rem;
+  }
+  .options{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
